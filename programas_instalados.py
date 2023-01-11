@@ -1,6 +1,7 @@
 import subprocess, webbrowser, pyautogui as ag
 
 def todos_instalados():
+    """ retorna lista com nome dos programas instalados na máquina Windows. """
     try:
         Data = subprocess.check_output(['winget', 'list']).decode("UTF-8") 
         linhas = Data.split("\r\n") #gera uma lista utilizando "\r\n" como separador
@@ -27,5 +28,3 @@ def todos_instalados():
 
             
     return todos_instalados
-
-ag.alert(todos_instalados())
